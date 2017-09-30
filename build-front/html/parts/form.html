@@ -1,34 +1,44 @@
 <form class="ma webform-submission-adyax_test_form-form" data-drupal-selector="webform-submission-adyax-test-form-add-form" enctype="multipart/form-data" action="/form/adyax-test-form" method="post" id="webform-submission-adyax-test-form-add-form" accept-charset="UTF-8" novalidate="novalidate">
 
-    <div class="js-form-item form-item js-form-type-textfield form-item-your-name js-form-item-your-name">
-        <label for="edit-your-name" class="js-form-required form-required">Your name</label>
-        <input data-webform-required-error="Please fill" data-drupal-selector="edit-your-name" data-msg-maxlength="Your name field has a maximum length of 255." data-msg-required="Your name is required." type="text" id="edit-your-name" name="your_name" value="" size="60" maxlength="255" class="form-text required" required="required" aria-required="true">
+    <fieldset data-drupal-selector="edit-left-block" id="edit-left-block" class="js-form-item form-item js-form-wrapper form-wrapper">
+        <legend>
+            <span class="fieldset-legend">left block</span>
+        </legend>
+        <div class="fieldset-wrapper">
+            <div class="js-form-item form-item js-form-type-textfield form-item-your-name js-form-item-your-name">
+                <label for="edit-your-name" class="js-form-required form-required">Your name</label>
+                <input data-webform-required-error="Please fill" data-drupal-selector="edit-your-name" data-msg-maxlength="Your name field has a maximum length of 255." data-msg-required="Your name is required." type="text" id="edit-your-name" name="your_name" value="" size="60" maxlength="255" class="form-text required" required="required" aria-required="true">
 
-    </div>
+            </div>
 
-    <div class="js-form-item form-item js-form-type-email form-item-your-email js-form-item-your-email">
-        <label for="edit-your-email" class="js-form-required form-required">Your email</label>
-        <input data-webform-required-error="Please fill" data-drupal-selector="edit-your-email" data-msg-email="Your email does not contain a valid email." data-msg-maxlength="Your email field has a maximum length of 254." data-msg-required="Your email is required." type="email" id="edit-your-email" name="your_email" value="" size="60" maxlength="254" class="form-email required" required="required" aria-required="true">
+            <div class="js-form-item form-item js-form-type-email form-item-your-email js-form-item-your-email">
+                <label for="edit-your-email" class="js-form-required form-required">Your email</label>
+                <input data-webform-required-error="Please fill" data-drupal-selector="edit-your-email" data-msg-email="Your email does not contain a valid email." data-msg-maxlength="Your email field has a maximum length of 254." data-msg-required="Your email is required." type="email" id="edit-your-email" name="your_email" value="" size="60" maxlength="254" class="form-email required" required="required" aria-required="true">
 
-    </div>
+            </div>
 
-    <div class="js-form-item form-item js-form-type-url form-item-your-portolio-github js-form-item-your-portolio-github">
-        <label for="edit-your-portolio-github">YOUR PORTOLIO / GITHUB</label>
-        <input data-drupal-selector="edit-your-portolio-github" data-msg-maxlength="YOUR PORTOLIO / GITHUB field has a maximum length of 255." data-msg-url="YOUR PORTOLIO / GITHUB does not contain a valid url." type="url" id="edit-your-portolio-github" name="your_portolio_github" value="" size="60" maxlength="255" class="form-url">
-    </div>
-
-    <div class="js-form-item form-item js-form-type-textarea form-item-message js-form-item-message">
-        <label for="edit-message">Message</label>
-        <div>
-            <textarea data-drupal-selector="edit-message" id="edit-message" name="message" rows="5" cols="60" class="form-textarea"></textarea>
+            <div class="js-form-item form-item js-form-type-url form-item-your-portolio-github js-form-item-your-portolio-github">
+                <label for="edit-your-portolio-github">YOUR PORTOLIO / GITHUB</label>
+                <input data-drupal-selector="edit-your-portolio-github" data-msg-maxlength="YOUR PORTOLIO / GITHUB field has a maximum length of 255." data-msg-url="YOUR PORTOLIO / GITHUB does not contain a valid url." type="url" id="edit-your-portolio-github" name="your_portolio_github" value="" size="60" maxlength="255" class="form-url">
+            </div>
         </div>
-    </div>
+    </fieldset>
 
-    <div id="ajax-wrapper">
-        <div class="js-form-item form-item js-form-type-webform-document-file form-item-cv js-form-item-cv">
-            <label for="edit-cv-upload">CV</label>
-            <div id="edit-cv-upload" class="js-webform-document-file webform-document-file js-form-managed-file form-managed-file">
-                <div id="ajax-wrapper">
+    <fieldset data-drupal-selector="edit-right-block" id="edit-right-block" class="js-form-item form-item js-form-wrapper form-wrapper">
+        <legend>
+            <span class="fieldset-legend">right block</span>
+        </legend>
+        <div class="fieldset-wrapper">
+            <div class="js-form-item form-item js-form-type-textarea form-item-message js-form-item-message">
+                <label for="edit-message">Message</label>
+                <div>
+                    <textarea data-drupal-selector="edit-message" id="edit-message" name="message" rows="5" cols="60" class="form-textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="js-form-item form-item js-form-type-webform-document-file form-item-cv js-form-item-cv">
+                <label for="edit-cv-upload">CV</label>
+                <div id="edit-cv-upload-wrapper" class="js-webform-document-file webform-document-file js-form-managed-file form-managed-file">
                     <input data-drupal-selector="edit-cv-upload" type="file" id="edit-cv-upload" name="files[cv]" size="22" class="js-form-file form-file">
                     <input class="js-hide button js-form-submit form-submit" data-drupal-selector="edit-cv-upload-button" formnovalidate="formnovalidate" type="submit" id="edit-cv-upload-button" name="cv_upload_button" value="Upload">
                     <div class="description">Only one file<br>Limit: 10 MB.<br>File types: pdf doc docx.</div>
@@ -36,7 +46,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </fieldset>
 
     <fieldset data-drupal-selector="edit-graduated" id="edit-graduated--wrapper" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper js-webform-radios-fieldset">
         <legend>
@@ -45,7 +55,7 @@
         <div class="fieldset-wrapper">
             <div id="edit-graduated" class="webform-options-display-side-by-side js-webform-radios">
                 <div class="js-form-item form-item js-form-type-radio">
-                    <input data-drupal-selector="edit-graduated-yes" type="radio" id="edit-graduated-yes" name="graduated" value="Yes" class="form-radio">
+                    <input data-drupal-selector="edit-graduated-yes" type="radio" id="edit-graduated-yes" name="graduated" value="Yes" class="form-radio" checked="checked">
                     <label for="edit-graduated-yes" class="option">Yes</label>
                 </div>
                 <div class="js-form-item form-item js-form-type-radio">
@@ -62,7 +72,7 @@
         </legend>
         <div class="fieldset-wrapper">
             <div id="edit-please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g" class="webform-options-display-one-column form-checkboxes"><div class="js-form-item form-item js-form-type-checkbox form-item--please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g-jquery js-form-item--please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g-jquery">
-                <input data-drupal-selector="edit-please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g-jquery" type="checkbox" id="edit-please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g-jquery" name="_please_mark_skills_you_are_best_in_and_types_of_tasks_you_are_g[jQuery]" value="jQuery" class="form-checkbox">
+                <input checked="checked" data-drupal-selector="edit-please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g-jquery" type="checkbox" id="edit-please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g-jquery" name="_please_mark_skills_you_are_best_in_and_types_of_tasks_you_are_g[jQuery]" value="jQuery" class="form-checkbox">
                 <label for="edit-please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g-jquery" class="option">jQuery</label>
             </div>
                 <div class="js-form-item form-item js-form-type-checkbox form-item--please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g-use-grunt js-form-item--please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g-use-grunt">

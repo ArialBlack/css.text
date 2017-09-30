@@ -25,12 +25,16 @@ form {
     background-clip: padding-box;
     border: 1px solid $border-color;
     border-radius: .25rem;
-    //transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
     touch-action: manipulation;
 
     &:focus {
       border-color: $adyax-yellow;
       outline: none !important;
+    }
+
+    &.error {
+      color: $adyax-red;
+      border-color: $adyax-red;
     }
   }
 
@@ -41,6 +45,12 @@ form {
     text-transform: uppercase;
     color: $label;
     margin-bottom: 22px;
+
+    &.error {
+      color: $adyax-red;
+      letter-spacing: normal;
+      text-transform: none;
+    }
   }
 
   input.form-checkbox + label,
@@ -52,4 +62,153 @@ form {
   .form-item {
     margin-bottom: 30px;
   }
+
+  .webform-document-file {
+    .description {
+      display: none;
+    }
+  }
 }
+
+.form-checkbox {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.form-checkbox + label {
+  padding-left: 67px;
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    border: 1px solid $border-color;
+    padding: 19px;
+    border-radius: 2px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+  }
+}
+
+.form-checkbox:checked + label {
+  background-position: 0 -30px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    width: 6px;
+    height: 16px;
+    transform: rotate(45deg);
+    border: solid #090909;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+.form-checkbox + label {
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+//
+.form-radio {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.form-radio + label {
+  padding-left: 67px;
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    border: 1px solid $border-color;
+    padding: 19px;
+    border-radius: 100%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+  }
+}
+
+.form-radio:checked + label {
+  background-position: 0 -30px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    background: #6f6f6f;
+    border-radius: 100%;
+    border: 1px solid #535353;
+    width: 13px;
+    height: 13px;
+  }
+}
+
+.form-radio + label {
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input[type="file"] + label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.js input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.no-js input[type="file"] + label {
+  display: none;
+}
+
+input[type="file"]:focus + label,
+input[type="file"].has-focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
