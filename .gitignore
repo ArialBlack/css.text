@@ -196,7 +196,7 @@ $RECYCLE.BIN/
 dist/
 build/
 eggs/
-parts/
+
 var/
 sdist/
 develop-eggs/
@@ -222,3 +222,4 @@ node_modules/
 
 css/
 /index.html
+

@@ -1,0 +1,1 @@
+$(".webform-submission-adyax_test_form-form").validate();

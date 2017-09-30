@@ -1,0 +1,55 @@
+form {
+  input,
+  textarea {
+    max-width: 100%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"] {
+    height: 50px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  textarea {
+    display: block;
+    width: 100%;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: $label;
+    background-color: $adjax-page-white;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid $border-color;
+    border-radius: .25rem;
+    //transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    touch-action: manipulation;
+
+    &:focus {
+      border-color: $adyax-yellow;
+      outline: none !important;
+    }
+  }
+
+  label {
+    display: block;
+    letter-spacing: 1.4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $label;
+    margin-bottom: 22px;
+  }
+
+  input.form-checkbox + label,
+  input.form-radio + label {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  .form-item {
+    margin-bottom: 30px;
+  }
+}

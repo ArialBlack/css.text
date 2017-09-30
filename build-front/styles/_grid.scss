@@ -1,0 +1,58 @@
+@at-root {
+  @-ms-viewport { width: device-width; }
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1260px;
+
+$xs-max-width: 0;
+$sm-max-width: 540px;
+$md-max-width: 720px;
+$lg-max-width: 960px;
+$xl-max-width: 1200px;
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+@media (min-width: $sm) {
+  .container {
+    max-width: $sm-max-width;
+  }
+}
+
+@media (min-width: $md) {
+  .container {
+    max-width: $md-max-width;
+  }
+}
+
+@media (min-width: $lg) {
+  .container {
+    max-width: $lg-max-width;
+  }
+}
+
+@media (min-width: $xl) {
+  .container {
+    max-width: $xl-max-width;
+  }
+}

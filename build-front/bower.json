@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "jquery": "^3.2.1",
-    "bootstrap": "v4.0.0-beta"
+    "bootstrap": "v4.0.0-beta",
+    "jquery-validation": "^1.17.0"
   }
 }

@@ -1,10 +1,28 @@
 <!doctype html>
 <html class="no-js" lang="en">
-    <!--(bake parts/header.html)-->
+    <!--(bake parts/header.html title="Frond-End Developer")-->
 
     <body>
+        <header class="container text-center">
+            <div class="branding">
+                <div class="logo">
+                    <img src="img/logo.svg" />
+                </div>
+                <div class="slogan">A Better Experience</div>
+            </div>
+        </header>
 
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <section class="jumbotron container text-center">
+            <h1>Frond-End Developer</h1>
+            <h2>Adyax’s core values take top priority: we care for our client, and we care for our people.
+                Staff and clients work in partnership with consistent,  transparent communication.</h2>
+        </section>
+
+        <main role="main">
+            <section class="container main-form-container">
+                <!--(bake parts/form.html)-->
+            </section>
+        </main>
 
         <!--(bake parts/footer.html)-->
     </body>

@@ -1,0 +1,44 @@
+.ma {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.slogan {
+  //@include letter-spacing(5.6, 12);
+  letter-spacing: 5.6px;
+  font-family: 'Work Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+  color: #191919;
+}
+
+.jumbotron {
+  @media (min-width: $lg) {
+    max-width: 500px;
+  }
+
+  @media (min-width: $xl) {
+    max-width: 770px;
+  }
+}
+
+.webform-submission-adyax_test_form-form {
+  @media (min-width: $lg) {
+    max-width: 750px;
+  }
+
+  @media (min-width: $xl) {
+    max-width: 948px;
+  }
+}
