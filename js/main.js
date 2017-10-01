@@ -28,8 +28,6 @@ function customFileInput() {
             .on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
 
     });
-
-    
 }
 
 $(".webform-submission-adyax_test_form-form").validate();

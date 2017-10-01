@@ -31,15 +31,6 @@ main {
   margin-bottom: 205px;
 }
 
-.slogan {
-  letter-spacing: 5.6px;
-  font-family: 'Work Sans', sans-serif;
-  text-transform: uppercase;
-  font-weight: 900;
-  color: #191919;
-  @include font-size(12);
-}
-
 .logo {
   img {
     display: none;
@@ -62,17 +53,68 @@ main {
   }
 }
 
+header {
+  margin-top: 50px;
+}
+
+.slogan {
+  @include font-size(12);
+  letter-spacing: 5.6px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #191919;
+  margin-top: 20px;
+}
+
+h1 {
+  @include rft(40,60);
+  font-family: 'avalonbold', sans-serif;;
+  font-weight: bold;
+  line-height: 1.12;
+  text-align: center;
+  color: #252525;
+  margin: 80px auto 45px auto;
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: $adyax-yellow;
+    bottom: 0;
+
+    @media screen and (min-width: $lg) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
 .jumbotron {
   margin-bottom: 50px;
 
-  @media (min-width: $lg) {
-    max-width: 500px;
+  @media screen and (min-width: $lg) {
+    max-width: 650px;
     margin-bottom: 80px;
   }
 
-  @media (min-width: $xl) {
+  @media screen and (min-width: $xl) {
     max-width: 770px;
     margin-bottom: 140px;
+  }
+
+  h2 {
+    @include rft(20,24);
+    font-weight: 600;
+    text-align: center;
+    color: #191919;
+    line-height: 1.2;
+
+    @media screen and (min-width: $md) {
+      line-height: 1.79;
+    }
   }
 }
 
@@ -80,25 +122,25 @@ footer {
   background: black;
   padding: 40px 20px 20px 20px;
 
-  @media (min-width: $sm) {
+  @media screen and (min-width: $sm) {
     padding: 70px 40px 30px 40px;
   }
 
-  @media (min-width: $md) {
+  @media screen and (min-width: $md) {
     padding: 70px 40px 30px 40px;
   }
 
-  @media (min-width: $lg) {
+  @media screen and (min-width: $lg) {
     padding: 90px 55px 40px 55px;
   }
 
-  @media (min-width: $xl) {
+  @media screen and (min-width: $xl) {
     padding: 112px 64px 57px 64px;
   }
 
   .img-container {
-    @include font-size(40);
-    font-family: 'avalonbold';
+    @include rft(20,40);
+    font-family: 'avalonbold', sans-serif;;
     background: black url('../img/map.png') no-repeat center center;
     background-size: contain;
     font-weight: bold;
@@ -108,28 +150,26 @@ footer {
 
     padding: 20px 40px 70px 40px;
 
-    @media (min-width: $sm) {
+    @media screen and (min-width: $sm) {
       padding: 40px 20px 120px 20px;
     }
 
-    @media (min-width: $md) {
+    @media screen and (min-width: $md) {
       padding: 70px 110px 150px 110px;
     }
 
-    @media (min-width: $lg) {
+    @media screen and (min-width: $lg) {
       padding: 90px 150px 180px 150px;
     }
 
-    @media (min-width: $xl) {
+    @media screen and (min-width: $xl) {
       padding: 110px 180px 200px 180px;
     }
 
     p {
       display: inline-block;
-      margin-left: auto;
-      margin-right: auto;
       max-width: 750px;
-      margin: 0;
+      margin: 0 auto;
     }
   }
 }

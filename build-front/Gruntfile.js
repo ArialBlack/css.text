@@ -9,8 +9,7 @@ module.exports = function(grunt) {
                     lineNumbers: true
                 },
                 files: {
-                    '../css/style.css': 'styles/style.scss',
-                    '../css/ie8.css': 'styles/ie8.scss'
+                    '../css/style.css': 'styles/style.scss'
                 }
             }
         },

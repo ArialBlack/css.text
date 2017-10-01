@@ -6,32 +6,34 @@ S - the font-size in pixels
   letter-spacing: $x * $s / 1000 * 1px;
 }
 
+@mixin font-size($mysizeValue) {
+  $sizeValue: $mysizeValue / $basefontsize;
+  $remValue: $sizeValue;
+  font-size: $mysizeValue * 1px;
+  font-size: $remValue * 1rem;
+}
+
 @mixin rft($mysizeValue-min, $mysizeValue-max) {
 
   $delta: $mysizeValue-max - $mysizeValue-min;
   $step: $delta / 3;
 
-  font-size: $mysizeValue-min * 1px;
+  @include font-size($mysizeValue-min);
 
-  @media (min-width: $sm) {
-    font-size: $mysizeValue-max - $step * 3 * 1px;
+  @media screen and (min-width: $sm) {
+    $fontsize: $mysizeValue-max - $step * 3;
+    @include font-size($fontsize);
   }
-  @media (min-width: $md) {
-    font-size: $mysizeValue-max - $step * 2 * 1px;
+  @media screen and (min-width: $md) {
+    $fontsize: $mysizeValue-max - $step * 2;
+    @include font-size($fontsize);
   }
-  @media (min-width: $lg) {
-    font-size: ($mysizeValue-max - $step) * 1px;
+  @media screen and (min-width: $lg) {
+    $fontsize: $mysizeValue-max - $step;
+    @include font-size($fontsize);
   }
 
-  @media (min-width: $xl) {
-    font-size: $mysizeValue-max * 1px;
+  @media screen and (min-width: $xl) {
+    @include font-size($mysizeValue-max);
   }
-}
-
-@mixin font-size($mysizeValue) {
-  $sizeValue: $mysizeValue / $basefontsize;
-  $remValue: $sizeValue;
-  $pxValue: $sizeValue * 10;
-  font-size: $pxValue * 1px;
-  font-size: $remValue * 1rem;
 }

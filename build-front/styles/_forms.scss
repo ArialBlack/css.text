@@ -15,6 +15,7 @@ input[type="url"],
 textarea {
   display: block;
   width: 100%;
+  padding: 8px 12px;
   padding: .5rem .75rem;
   line-height: 1.25;
   color: $label;
@@ -22,7 +23,8 @@ textarea {
   background-image: none;
   background-clip: padding-box;
   border: 1px solid $border-color;
-  border-radius: .25rem;
+  border-radius: 2px;
+  border-radius: .125rem;
   touch-action: manipulation;
 
   &:focus {
@@ -199,7 +201,7 @@ input[type="file"].has-focus + label {
   padding-top: 75px;
   border-top: $border-color 1px solid;
 
-  @media (min-width: $md) {
+  @media screen and (min-width: $md) {
     #edit-left-block,
     #edit-right-block {
       width: 50%;
@@ -215,11 +217,11 @@ input[type="file"].has-focus + label {
     }
   }
 
-  @media (min-width: $lg) {
+  @media screen and (min-width: $lg) {
     max-width: 750px;
   }
 
-  @media (min-width: $xl) {
+  @media screen and (min-width: $xl) {
     max-width: 948px;
   }
 
@@ -270,6 +272,7 @@ input[type="file"].has-focus + label {
   .js-form-type-webform-document-file {
     .form-managed-file {
       width: 100%;
+      padding: 8px 12px;
       padding: .5rem .75rem;
       border: 1px solid $border-color;
       border-radius: .25rem;
@@ -311,7 +314,7 @@ input[type="file"].has-focus + label {
   }
 
   #edit-please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g {
-    @media (min-width: $md) {
+    @media screen and (min-width: $md) {
       -moz-column-count: 2;
       -moz-columns: 2;
       -webkit-columns: 2;
@@ -334,9 +337,10 @@ input[type="file"].has-focus + label {
 
   .webform-button--submit {
     @include font-size(12);
-    width: 276px;
-    height: 76px;
-    background: $adjax-page-white;
+    width: 200px;
+    height: 60px;
+    background: $adjax-page-white url('../img/submit-button.svg') no-repeat center center;
+    background-size: contain;
     border: none;
     box-shadow: 0px 14px 30px 0px rgba(216, 216, 216, 0.5);
     -webkit-box-shadow: 0px 14px 30px 0px rgba(216, 216, 216, 0.5);
@@ -349,6 +353,12 @@ input[type="file"].has-focus + label {
     color: #191919;
     text-transform: uppercase;
     transition: all 0.3s linear;
+    padding: 0;
+
+    @media screen and (min-width: $sm) {
+      width: 276px;
+      height: 76px;
+    }
 
     &:hover {
       box-shadow: 0px 0px 30px 0px rgba(216, 216, 216, 0.7);
@@ -358,3 +368,100 @@ input[type="file"].has-focus + label {
   }
 }
 
+.no-svg {
+  .webform-submission-adyax_test_form-form {
+    .webform-button--submit {
+      background: $adjax-page-white url('../img/submit-button.png') no-repeat center center;
+    }
+  }
+}
+
+.no-csscolumns {
+  .webform-submission-adyax_test_form-form {
+    #edit-please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g {
+      @media screen and (min-width: $md) {
+        width: 100%;
+
+        .form-item {
+          width: 50%;
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+.no-boxshadow {
+  .webform-submission-adyax_test_form-form {
+    .webform-button--submit {
+      border: 1px solid $border-color;
+      transition: all 0.3s linear;
+
+      &:hover {
+        background: $adyax-yellow;
+        border-color: $adyax-yellow;
+        color: white;
+      }
+    }
+  }
+}
+
+.ie6,
+.ie7,
+.ie8 {
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  .js-form-type-webform-document-file .form-managed-file {
+    height: 34px;
+  }
+
+  .form-checkbox,
+  .form-radio {
+    display: inline-block;
+    position: static;
+    opacity: 1;
+    height: 20px;
+    width: 20px;
+
+    & + label {
+      padding: 0;
+      padding-left: 20px;
+      display: inline;
+
+      &:before {
+        border: none;
+      }
+    }
+  }
+
+  .webform-submission-adyax_test_form-form {
+    #edit-message {
+      min-height: 159px;
+    }
+  }
+}
+
+.ie6,
+.ie7 {
+  .webform-submission-adyax_test_form-form {
+    padding-top: 75px;
+    border-top: $border-color 1px solid;
+
+    @media screen and (min-width: $md) {
+      #edit-left-block,
+      #edit-right-block {
+        width: 45%;
+        padding-right: 5%;
+        float: left;
+        box-sizing: border-box;
+        display: inline-block;
+      }
+
+      #edit-right-block {
+        padding-right: 0;
+        padding-left: 5%;
+      }
+    }
+  }
+}

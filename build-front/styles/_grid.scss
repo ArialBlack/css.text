@@ -21,25 +21,25 @@ html {
   width: 100%;
 }
 
-@media (min-width: $sm) {
+@media screen and (min-width: $sm) {
   .container {
     max-width: $sm-max-width;
   }
 }
 
-@media (min-width: $md) {
+@media screen and (min-width: $md) {
   .container {
     max-width: $md-max-width;
   }
 }
 
-@media (min-width: $lg) {
+@media screen and (min-width: $lg) {
   .container {
     max-width: $lg-max-width;
   }
 }
 
-@media (min-width: $xl) {
+@media screen and (min-width: $xl) {
   .container {
     max-width: $xl-max-width;
   }
