@@ -7,6 +7,15 @@
   text-align: center;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
 body {
   font-size: 1rem;
   line-height: 1.5;
@@ -23,6 +32,28 @@ body {
   color: #191919;
 }
 
+.logo {
+  img {
+    display: none;
+
+    &.svg {
+      display: inline-block;
+    }
+  }
+}
+
+.no-svg {
+  .logo {
+    img {
+      display: inline-block;
+
+      &.svg {
+        display: none;
+      }
+    }
+  }
+}
+
 .jumbotron {
   margin-bottom: 50px;
 
@@ -34,86 +65,5 @@ body {
   @media (min-width: $xl) {
     max-width: 770px;
     margin-bottom: 140px;
-  }
-}
-
-.webform-submission-adyax_test_form-form {
-  padding-top: 75px;
-  border-top: $border-color 1px solid;
-
-  @media (min-width: $md) {
-    #edit-left-block,
-    #edit-right-block {
-      width: 50%;
-      padding-right: 25px;
-      float: left;
-      box-sizing: border-box;
-      display: inline-block;
-    }
-
-    #edit-right-block {
-      padding-right: 0;
-      padding-left: 25px;
-    }
-  }
-
-  @media (min-width: $lg) {
-    max-width: 750px;
-  }
-
-  @media (min-width: $xl) {
-    max-width: 948px;
-  }
-
-  #edit-left-block,
-  #edit-right-block {
-    legend {
-      display: none;
-    }
-  }
-
-  #edit-message {
-    min-height: 172px;
-  }
-
-  #edit-graduated--wrapper {
-    clear: both;
-
-    .form-item {
-      display: inline-block;
-    }
-  }
-
-  .js-form-type-webform-document-file {
-    .form-managed-file {
-      width: 100%;
-      padding: .5rem .75rem;
-      border: 1px solid $border-color;
-      border-radius: .25rem;
-      height: 50px;
-
-      label {
-        margin-bottom: 0;
-        font-size: 14px;
-        line-height: 1.64;
-        text-transform: none;
-        max-width: 180px;
-        margin-top: 6px;
-      }
-    }
-
-    .form-submit {
-      background: $adyax-yellow;
-      border-radius: 2px;
-      color: white;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 1.42;
-      letter-spacing: 1.2px;
-      border: none;
-      padding: 8px 16px;
-      float: right;
-    }
   }
 }
