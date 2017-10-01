@@ -16,20 +16,28 @@
   word-wrap: normal;
 }
 
+html,
 body {
-  font-size: 1rem;
-  line-height: 1.5;
-  font-family: 'Work Sans', sans-serif;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: $label;
+  background: $adjax-page-white;
+}
+
+main {
+  margin-bottom: 205px;
 }
 
 .slogan {
-  //@include letter-spacing(5.6, 12);
   letter-spacing: 5.6px;
   font-family: 'Work Sans', sans-serif;
   text-transform: uppercase;
-  font-size: 12px;
   font-weight: 900;
   color: #191919;
+  @include font-size(12);
 }
 
 .logo {
@@ -65,5 +73,63 @@ body {
   @media (min-width: $xl) {
     max-width: 770px;
     margin-bottom: 140px;
+  }
+}
+
+footer {
+  background: black;
+  padding: 40px 20px 20px 20px;
+
+  @media (min-width: $sm) {
+    padding: 70px 40px 30px 40px;
+  }
+
+  @media (min-width: $md) {
+    padding: 70px 40px 30px 40px;
+  }
+
+  @media (min-width: $lg) {
+    padding: 90px 55px 40px 55px;
+  }
+
+  @media (min-width: $xl) {
+    padding: 112px 64px 57px 64px;
+  }
+
+  .img-container {
+    @include font-size(40);
+    font-family: 'avalonbold';
+    background: black url('../img/map.png') no-repeat center center;
+    background-size: contain;
+    font-weight: bold;
+    line-height: 1.3;
+    text-align: center;
+    color: #ffffff;
+
+    padding: 20px 40px 70px 40px;
+
+    @media (min-width: $sm) {
+      padding: 40px 20px 120px 20px;
+    }
+
+    @media (min-width: $md) {
+      padding: 70px 110px 150px 110px;
+    }
+
+    @media (min-width: $lg) {
+      padding: 90px 150px 180px 150px;
+    }
+
+    @media (min-width: $xl) {
+      padding: 110px 180px 200px 180px;
+    }
+
+    p {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 750px;
+      margin: 0;
+    }
   }
 }

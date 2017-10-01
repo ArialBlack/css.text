@@ -16,7 +16,6 @@ textarea {
   display: block;
   width: 100%;
   padding: .5rem .75rem;
-  font-size: 1rem;
   line-height: 1.25;
   color: $label;
   background-color: $adjax-page-white;
@@ -38,12 +37,13 @@ textarea {
 }
 
 label {
+  @include font-size(14);
   display: block;
   letter-spacing: 1.4px;
-  font-size: 14px;
   text-transform: uppercase;
   color: $label;
   margin-bottom: 22px;
+  font-weight: 500;
 
   &.error {
     color: $adyax-red;
@@ -54,12 +54,11 @@ label {
 
 .form-checkbox + label,
 .form-radio + label {
-  display: inline-block;
   margin-bottom: 0;
 }
 
 .form-item {
-  margin-bottom: 30px;
+  margin-bottom: $gutter * 2;
 }
 
 .webform-document-file {
@@ -68,71 +67,14 @@ label {
   }
 }
 
-.form-item.js-form-type-checkbox {
+.form-item.js-form-type-checkbox,
+.form-item.js-form-type-radio {
   display: table;
   min-height: 40px;
 }
 
-.form-checkbox {
-  position: absolute;
-  z-index: -1000;
-  left: -1000px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-}
-
-.form-checkbox + label {
-  padding-left: 67px;
-  cursor: pointer;
-  min-height: 40px;
-  line-height: 1;
-  display: table-cell;
-  vertical-align: middle;
-
-  &:before {
-    content: '';
-    border: 1px solid $border-color;
-    padding: 19px;
-    border-radius: 2px;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-}
-
-.form-checkbox:checked + label {
-  background-position: 0 -30px;
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 16px;
-    width: 6px;
-    height: 16px;
-    transform: rotate(45deg);
-    border: solid #090909;
-    border-width: 0 2px 2px 0;
-  }
-}
-
-.form-checkbox + label {
-  position: relative;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-//
+// Checkboxes & radio
+.form-checkbox,
 .form-radio {
   position: absolute;
   z-index: -1000;
@@ -146,30 +88,74 @@ label {
   border: 0;
 }
 
+.form-checkbox + label,
 .form-radio + label {
   padding-left: 67px;
-  line-height: 40px;
-  display: inline-block;
-  vertical-align: middle;
   cursor: pointer;
+  min-height: 40px;
+  line-height: 1;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   &:before {
     content: '';
     border: 1px solid $border-color;
     padding: 19px;
-    border-radius: 100%;
     display: inline-block;
     position: absolute;
     left: 0;
+    top: 0;
+  }
+}
+
+.form-checkbox:checked + label,
+.form-radio:checked + label {
+  background-position: 0 -30px;
+}
+
+.form-checkbox:checked + label,
+.form-radio:checked + label {
+  &:after {
+    content: '';
+    position: absolute;
+  }
+}
+
+//Checkboxes only
+.form-checkbox + label {
+  &:before {
+    border-radius: 2px;
+  }
+}
+
+.form-checkbox:checked + label {
+  &:after {
+    top: 10px;
+    left: 16px;
+    width: 6px;
+    height: 16px;
+    transform: rotate(45deg);
+    border: solid #090909;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+//Radio only
+.form-radio + label {
+  &:before {
+    border-radius: 100%;
   }
 }
 
 .form-radio:checked + label {
-  background-position: 0 -30px;
-
   &:after {
-    content: '';
-    position: absolute;
     top: 13px;
     left: 13px;
     background: #6f6f6f;
@@ -180,16 +166,7 @@ label {
   }
 }
 
-.form-radio + label {
-  position: relative;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
+//Input file
 input[type="file"] + label {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -217,6 +194,7 @@ input[type="file"].has-focus + label {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
+//Form specific
 .webform-submission-adyax_test_form-form {
   padding-top: 75px;
   border-top: $border-color 1px solid;
@@ -258,11 +236,34 @@ input[type="file"].has-focus + label {
 
   #edit-graduated-html {
     clear: both;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+    a {
+      text-decoration: none;
+      color: $label;
+      border-bottom: 1px solid $adyax-yellow;
+      padding-bottom: 5px;
+      font-weight: 400;
+      transition: all 0.3s linear;
+
+      &:hover {
+        border-color: $adyax-red;
+      }
+    }
   }
 
   #edit-graduated--wrapper {
     .form-item {
-      display: inline-block;
+      float: left;
+      margin-right: 45px;
+
+      label {
+        @include font-size(14);
+        font-weight: 600;
+        line-height: 1.21;
+        letter-spacing: 1.4px;
+      }
     }
   }
 
@@ -275,8 +276,8 @@ input[type="file"].has-focus + label {
       height: 50px;
 
       label {
+        @include font-size(14);
         margin-bottom: 0;
-        font-size: 14px;
         line-height: 1.64;
         text-transform: none;
         max-width: 180px;
@@ -285,17 +286,27 @@ input[type="file"].has-focus + label {
     }
 
     .form-submit {
+      @include font-size(13);
       background: $adyax-yellow;
       border-radius: 2px;
       color: white;
       text-transform: uppercase;
-      font-size: 12px;
       font-weight: 500;
       line-height: 1.42;
       letter-spacing: 1.2px;
       border: none;
       padding: 8px 16px;
       float: right;
+    }
+  }
+
+  .fieldgroup {
+    legend {
+      @include font-size(12);
+      font-weight: 300;
+      line-height: 2.08;
+      color: #979797;
+      margin-bottom: 33px;
     }
   }
 
@@ -308,11 +319,41 @@ input[type="file"].has-focus + label {
     }
 
     label {
-      font-size: 16px;
+      @include font-size(16);
       font-weight: 600;
       color: $label;
       letter-spacing: normal;
       text-transform: none;
+    }
+  }
+
+  #edit-actions {
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .webform-button--submit {
+    @include font-size(12);
+    width: 276px;
+    height: 76px;
+    background: $adjax-page-white;
+    border: none;
+    box-shadow: 0px 14px 30px 0px rgba(216, 216, 216, 0.5);
+    -webkit-box-shadow: 0px 14px 30px 0px rgba(216, 216, 216, 0.5);
+    -moz-box-shadow: 0px 14px 30px 0px rgba(216, 216, 216, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+    color: #191919;
+    text-transform: uppercase;
+    transition: all 0.3s linear;
+
+    &:hover {
+      box-shadow: 0px 0px 30px 0px rgba(216, 216, 216, 0.7);
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(216, 216, 216, 0.7);
+      -moz-box-shadow: 0px 0px 30px 0px rgba(216, 216, 216, 0.7);
     }
   }
 }

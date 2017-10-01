@@ -13,23 +13,11 @@ html {
   box-sizing: inherit;
 }
 
-$xs: 0;
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xl: 1260px;
-
-$xs-max-width: 0;
-$sm-max-width: 540px;
-$md-max-width: 720px;
-$lg-max-width: 960px;
-$xl-max-width: 1200px;
-
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: $gutter;
+  padding-left: $gutter;
   width: 100%;
 }
 
